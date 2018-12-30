@@ -1,0 +1,4 @@
+vscode/
+01_hello/build/
+01_hello/cmake/
+01_hello/version_def.h
