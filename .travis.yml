@@ -12,6 +12,7 @@ script:
   - cmake --build cmake
   - cmake --build cmake --target test
   - cmake --build cmake --target package
+  - cd ..
 deploy:
   skip_cleanup: true
   provider: script
