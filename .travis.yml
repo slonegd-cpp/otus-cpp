@@ -11,6 +11,7 @@ install:
 before_script:
   - sudo apt-get install libboost-test-dev -y
   - sudo apt-get install doxygen
+  - sudo apt-get install doxygen graphviz
 script:
   - cd ./01_hello
   - cmake -H. -Bcmake
@@ -32,6 +33,9 @@ script:
   - cmake --build cmake
   - cmake --build cmake --target test
   - cmake --build cmake --target package
+  - cd ../05_graph
+  - cmake -H. -Bcmake
+  - cmake --build cmake
   - cd ..
   - doxygen Doxyfile
 deploy:

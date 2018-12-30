@@ -10,4 +10,6 @@ latex
 03_allocator/cmake/
 04_print_ip/build/
 04_print_ip/cmake/
+05_graph/build/
+05_graph/cmake/
 
