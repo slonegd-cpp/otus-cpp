@@ -1,4 +1,6 @@
 .vscode
+html
+latex
 01_hello/build/
 01_hello/cmake/
 01_hello/version_def.h
@@ -6,3 +8,6 @@
 02_ip_filter/cmake/
 03_allocator/build/
 03_allocator/cmake/
+04_print_ip/build/
+04_print_ip/cmake/
+
