@@ -22,7 +22,21 @@ script:
   - cmake --build cmake
   - cmake --build cmake --target test
   - cmake --build cmake --target package
+  - cd ../04_print_ip
+  - cmake -H. -Bcmake
+  - cmake --build cmake
+  - cmake --build cmake --target test
+  - cmake --build cmake --target package
+  - cd ../05_graph
+  - cmake -H. -Bcmake
+  - cmake --build cmake
+  - cd ../06_matix
+  - cmake -H. -Bcmake
+  - cmake --build cmake
+  - cmake --build cmake --target test
+  - cmake --build cmake --target package
   - cd ..
+  - doxygen Doxyfile
 deploy:
   skip_cleanup: true
   provider: script
