@@ -14,3 +14,5 @@ latex
 05_graph/cmake/
 06_matrix/build/
 06_matrix/cmake/
+07_bulk/build/
+07_bulk/cmake/
