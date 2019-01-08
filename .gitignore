@@ -22,3 +22,5 @@ latex
 11_async/cmake/
 12_bulkserver/build/
 12_bulkserver/cmake/
+13_joinserver/build/
+13_joinserver/cmake/
