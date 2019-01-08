@@ -24,3 +24,6 @@ latex
 12_bulkserver/cmake/
 13_joinserver/build/
 13_joinserver/cmake/
+14_yamr/build/
+14_yamr/cmake/
+
