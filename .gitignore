@@ -20,3 +20,5 @@ latex
 10_bulkmt/cmake/
 11_async/build/
 11_async/cmake/
+12_bulkserver/build/
+12_bulkserver/cmake/
