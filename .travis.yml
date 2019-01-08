@@ -45,19 +45,26 @@ script:
   - cmake --build cmake
   - cmake --build cmake --target test
   - cmake --build cmake --target package
+  - cd ../11_async
+  - cmake -H. -Bcmake
+  - cmake --build cmake
+  - cmake --build cmake --target test
+  - cmake --build cmake --target package
   - cd ..
   - doxygen Doxyfile
 deploy:
   skip_cleanup: true
   - provider: script
-    script: curl -T ./01_hello/cmake/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/helloworld/0.0.$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+    script:
+      - curl -T ./01_hello/cmake/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/helloworld/0.0.$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
   - provider: script
-    script: curl -T ./02_ip_filter/cmake/ip_filter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/ip_filter/0.0.$TRAVIS_BUILD_NUMBER/ip_filter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-  - provider: script
-    script: curl -T ./03_allocator/cmake/allocator-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/allocator/0.0.$TRAVIS_BUILD_NUMBER/allocator-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-  - provider: script
-    script: curl -T ./04_print_ip/cmake/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/print_ip/0.0.$TRAVIS_BUILD_NUMBER/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-  - provider: script
-    script: curl -T ./06_matrix/cmake/matrix-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/matrix/0.0.$TRAVIS_BUILD_NUMBER/matrix-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-  - provider: script
-    script: curl -T ./07_bulk/cmake/bulk-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/bulk/0.0.$TRAVIS_BUILD_NUMBER/bulk-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+    script:
+      - curl -T ./02_ip_filter/cmake/ip_filter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/ip_filter/0.0.$TRAVIS_BUILD_NUMBER/ip_filter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  # - provider: script
+  #   script: curl -T ./03_allocator/cmake/allocator-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/allocator/0.0.$TRAVIS_BUILD_NUMBER/allocator-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  # - provider: script
+  #   script: curl -T ./04_print_ip/cmake/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/print_ip/0.0.$TRAVIS_BUILD_NUMBER/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  # - provider: script
+  #   script: curl -T ./06_matrix/cmake/matrix-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/matrix/0.0.$TRAVIS_BUILD_NUMBER/matrix-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  # - provider: script
+  #   script: curl -T ./07_bulk/cmake/bulk-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uslonegd:$BINTRAY_API_KEY "https://api.bintray.com/content/slonegd/otus01/bulk/0.0.$TRAVIS_BUILD_NUMBER/bulk-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
